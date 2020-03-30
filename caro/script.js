@@ -73,7 +73,7 @@ let check = (i, j, ticks, element) => {
         let result = [];
         while (--i > -1 && --j > -1 && ticks.arr[i][j]["name"] === name);
         if (i===-1 & j!==-1) j--;
-        console.log(i, j)
+       
         while (++i < n && ++j < n && ticks.arr[i][j]["name"] === name ) result.push(ticks.arr[i][j]);
         if (result.length >= m) {
             result.forEach(value => {
@@ -82,7 +82,7 @@ let check = (i, j, ticks, element) => {
             });
             return true;
         }
-        console.log(result)
+        
         return false;
     }
 

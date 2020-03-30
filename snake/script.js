@@ -46,7 +46,7 @@ let run = () => {
     snakes.unshift(snake);
 
     if (snakes.length > 5) {
-        console.log("4444")
+        
         snakes.forEach((value, index) => {
             if (index === 0) return;
             if (value.id === snake.id) {

@@ -12,7 +12,6 @@ let rd = () => {
 
 let mySort = (index) => {
     arr.sort((a, b) => a[index] - b[index]);
-    console.table(arr);
     body.innerHTML = '';
     let length = 0;
     if (count*max >= arr.length) length = arr.length;
