@@ -1,0 +1,17 @@
+table{
+    margin: auto;
+    position: relative;
+    border: 1px solid black;
+    padding: 0;
+}
+td{
+    width: 20px;
+    height: 20px;
+}
+tr td {
+    padding: 1px;
+    margin: 1px 1px;
+}
+.option{
+    margin-bottom: 10px;
+}

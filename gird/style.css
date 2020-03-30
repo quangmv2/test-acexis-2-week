@@ -1,0 +1,21 @@
+th, td {
+    width: 50px;
+    height: 50px;
+}
+th {
+    background: red;
+}
+table, tr, td, tbody, thead, th {
+    border: 1px solid black;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+}
+.form {
+    margin-bottom: 10px;
+}
+.table {
+    margin: auto;
+    position: relative;
+}
