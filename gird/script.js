@@ -29,7 +29,6 @@ function handle(e) {
     e.preventDefault();
     n = parseInt(form.querySelector('[name="row"]').value);
     m = parseInt(form.querySelector('[name="col"]').value);
-    console.log(n, m);
     let str = '';
     for (let i = 0; i<m; i++) {
         str += `<th onclick="mySort(${i})">${i+1}</th>`;
@@ -49,7 +48,7 @@ function handle(e) {
         }
         arr.push([...a]);
     }
-    }
+}
 
 function render(e) {  
     if (window.scrollY + window.innerHeight >= tag.offsetTop -10 && (count*max <=arr.length)){
@@ -57,9 +56,7 @@ function render(e) {
         let t = 0, h = count;
         if (++h*max < arr.length) t = max;
             else t  = arr.length - (--h*max);
-            console.log("count: " + count, "t: " + t, "h: " + h)
         for (let i= count*max; i < count*max+t; i++) {
-            console.log( "II" +i);
             let row, cell;
             row = body.insertRow(i);
             for (let j = 0; j<m; j++) {
