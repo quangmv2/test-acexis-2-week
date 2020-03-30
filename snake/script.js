@@ -45,13 +45,16 @@ let run = () => {
     let snake = new Snake(i*n + j + 1, i, j);
     snakes.unshift(snake);
 
-    snakes.forEach((value, index) => {
-        if (index === 0) return;
-        if (value.id === snake.id) {
-            gameOver();
-            return;
-        }
-    });
+    if (snakes.length > 5) {
+        console.log("4444")
+        snakes.forEach((value, index) => {
+            if (index === 0) return;
+            if (value.id === snake.id) {
+                gameOver();
+                return;
+            }
+        });
+    }
 
     if (snake.id === food.id) {
         let newFoodi = rd();
@@ -149,6 +152,7 @@ document.addEventListener('keydown', handle);
 radios.forEach(radio => radio.addEventListener('click', changeOption))
 radios.forEach(radio => radio.addEventListener('change', (e) => {console.log(e)}))
 document.getElementById('reset').addEventListener('click', () => {
+    document.getElementById('length').innerHTML = "Độ dài: 1" ;
     clearInterval(idInterval);
     createMatrix();
     let snake = new Snake(9*n + 9 + 1, 9, 9);

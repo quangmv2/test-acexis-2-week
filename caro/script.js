@@ -36,12 +36,10 @@ let check = (i, j, ticks, element) => {
     let check1 = (i, j, ticks) => {
         let index = i;
         let { n, m } = ticks;
-        console.log(n, m);
         let { name } = ticks.arr[i][j];
         let result = [];
         while (--index > -1 && ticks.arr[index][j]["name"] === name);
         while (++index < n && ticks.arr[index][j]["name"] === name ) result.push(ticks.arr[index][j]);
-        console.log(result)
         if (result.length >= m) {
             result.forEach(value => {
                 let { id } = value;
@@ -55,12 +53,10 @@ let check = (i, j, ticks, element) => {
     let check2 = (i, j, ticks) => {
         let index = j;
         let { n, m } = ticks;
-        console.log(n, m);
         let { name } = ticks.arr[i][j];
         let result = [];
         while (--index > -1 && ticks.arr[i][index]["name"] === name);
         while (++index < n && ticks.arr[i][index]["name"] === name ) result.push(ticks.arr[i][index]);
-        console.log(result)
         if (result.length >= m) {
             result.forEach(value => {
                 let { id } = value;
@@ -73,13 +69,11 @@ let check = (i, j, ticks, element) => {
     
     let check3 = (i, j, ticks) => {
         let { n, m } = ticks;
-        console.log(n, m);
         let { name } = ticks.arr[i][j];
         let result = [];
         while (--i > -1 && --j > -1 && ticks.arr[i][j]["name"] === name);
-        if (i<j) j--;
-        if (j<i) i--;
-
+        if (i===-1 & j!==-1) j--;
+        console.log(i, j)
         while (++i < n && ++j < n && ticks.arr[i][j]["name"] === name ) result.push(ticks.arr[i][j]);
         if (result.length >= m) {
             result.forEach(value => {
@@ -88,19 +82,17 @@ let check = (i, j, ticks, element) => {
             });
             return true;
         }
+        console.log(result)
         return false;
     }
 
     let check4 = (i, j, ticks) => {
         let { n, m } = ticks;
-        console.log(n, m);
         let { name } = ticks.arr[i][j];
         let result = [];
         while (--i >-1 && ++j < n && ticks.arr[i][j]["name"] === name);
         if (i===-1) j++;
-        console.log('check4' + i, j);
         while (++i < n && --j > -1 && ticks.arr[i][j]["name"] === name ) result.push(ticks.arr[i][j]);
-        console.log("check4: " , result)
         if (result.length >= m) {
             result.forEach(value => {
                 let { id } = value;
@@ -125,11 +117,9 @@ let touch = (i, j, element) => {
 let handle1 = (i, j, ticks, element) => {
     console.log(element, ticks)
     if (ticks.arr[i][j]["status"]) return;
-    console.log(ticks)
     ticks.arr[i][j]["status"] = true;
     let { id } = ticks.arr[i][j];
     ticks.arr[i][j]["name"] = ticks.stt;
-    console.log(id);
     document.getElementById(element + "_" + id).innerHTML = ticks.stt;
     document.getElementById(element + "_" + id).setAttribute('disabled', 'disabled');
     reverceSTT(ticks);
@@ -141,7 +131,6 @@ let gameOver = (element, ticks) => {
         reverceSTT(ticks);
         alert(`${ticks.stt} win, Game over`);
         ticks.isPlay = false;
-        console.log(ticks)
     }, 100);
 }
 
@@ -160,7 +149,6 @@ let createMatrix = (n, m, ticks, element) => {
         ticks.push(t);
     }
     document.getElementById(element).innerHTML = str;
-    console.log(ticks)      
 }
 
 let start1 = () => {
