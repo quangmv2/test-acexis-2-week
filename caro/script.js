@@ -102,7 +102,6 @@ let check = (i, j, ticks, element) => {
         }
         return false;
     }
-
     if (check1(i, j, ticks) || check2(i, j, ticks) || check3(i, j, ticks) || check4(i, j, ticks)) return true;
     return false;
 }
