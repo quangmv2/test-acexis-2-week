@@ -46,7 +46,6 @@ let run = () => {
     snakes.unshift(snake);
 
     if (snakes.length > 5) {
-        
         snakes.forEach((value, index) => {
             if (index === 0) return;
             if (value.id === snake.id) {
@@ -150,7 +149,6 @@ idInterval = setInterval(() => {
 document.getElementById('length').innerHTML = "Độ dài: 1" ;
 document.addEventListener('keydown', handle);
 radios.forEach(radio => radio.addEventListener('click', changeOption))
-radios.forEach(radio => radio.addEventListener('change', (e) => {console.log(e)}))
 document.getElementById('reset').addEventListener('click', () => {
     document.getElementById('length').innerHTML = "Độ dài: 1" ;
     clearInterval(idInterval);
